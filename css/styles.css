@@ -1,0 +1,20 @@
+html {
+    font-family: sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.container {
+    padding: 1em;
+}
+
+.schedule {
+    max-width: 600px;
+    width: 100%;
+}
+
+.schedule-lectures {
+    width: 100%;
+}
