@@ -19,3 +19,40 @@ table {
 .schedule-lectures {
     width: 100%;
 }
+
+.schedule-month {
+    width: 100%;
+    margin: 1em 0 0.2em;
+    border-top: 0.2em #dc0000 solid;
+    color: #dc0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: .1em;
+}
+
+.schedule-month span {
+    position: relative;
+    padding: 0 1em;
+    top: -.65em;
+    left: 3.5em;
+    background-color: #fff;
+    display: inline-block;
+}
+
+@media (max-width:400px) {
+    .schedule-month span {
+        left: 2em;
+    }
+}
+
+@media (max-width:300px) {
+    .schedule-month {
+        border-top: none;
+    }
+
+    .schedule-month span {
+        padding: 0;
+        left: 0;
+    }
+}
