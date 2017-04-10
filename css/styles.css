@@ -56,3 +56,16 @@ table {
         left: 0;
     }
 }
+
+.schedule-lectures__date {
+    width: 5%;
+}
+
+.schedule-lectures__lecture {
+    width: 64%;
+}
+
+.schedule-lectures__lecturer {
+    text-align: left;
+    width: 31%;
+}
