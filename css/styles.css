@@ -16,8 +16,9 @@ table {
     margin: auto;
 }
 
-.schedule-lectures {
+.schedule-line {
     width: 100%;
+    margin-bottom: 0.7em;
 }
 
 .schedule-month {
@@ -57,15 +58,15 @@ table {
     }
 }
 
-.schedule-lectures__date {
+.schedule-line__date {
     width: 5%;
 }
 
-.schedule-lectures__lecture {
+.schedule-line__lecture {
     width: 64%;
 }
 
-.schedule-lectures__lecturer {
+.schedule-line__lecturer {
     text-align: left;
     width: 31%;
 }
