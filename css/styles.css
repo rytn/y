@@ -59,14 +59,17 @@ table {
 }
 
 .schedule-line__date {
+    font-size: 0.9em;
     width: 5%;
 }
 
 .schedule-line__lecture {
+    font-size: 1.1em;
     width: 64%;
 }
 
 .schedule-line__lecturer {
+    font-size: 0.8em;
     width: 31%;
 }
 
