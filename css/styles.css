@@ -65,14 +65,12 @@ table {
 
 .schedule-line__lecture {
     font-size: 1.1em;
-    width: 64%;
     line-height: 1;
 }
 
 .schedule-line__lecturer {
     font-size: 0.8em;
     margin-top: 0.4em;
-    width: 31%;
 }
 
 .link, .link:visited {
