@@ -69,3 +69,12 @@ table {
     text-align: left;
     width: 31%;
 }
+
+.link, .link:visited {
+    text-decoration: none;
+    color: #44b;
+}
+
+.link:hover {
+    color: #e00;
+}
