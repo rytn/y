@@ -105,7 +105,7 @@ table {
 .tooltip {
     position: relative;
     display: inline-block;
-    cursor: help;
+    cursor: default;
 }
 
 .tooltip .tooltiptext {
@@ -137,4 +137,8 @@ table {
 .schedule-line__school .tooltip,
 .schedule-line__school .tooltiptext {
     white-space: nowrap;
+}
+
+.schedule-line__auditorium {
+    width: 100px;
 }
