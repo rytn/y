@@ -131,10 +131,6 @@ table {
     border-radius: 0.2em;
     margin-right: 0.3em;
 
-    top: -0.3em;
-    right: 105%;
-    margin-left: -5em;
-
     position: absolute;
     z-index: 1;
 }
@@ -146,6 +142,21 @@ table {
 .tooltip:hover {
     color: #e00;
     border-bottom: 1px #e00 dotted;
+}
+
+.tooltip .tooltip--left,
+.tooltip--left .tooltiptext {
+    top: -0.3em;
+    right: 105%;
+    margin-left: -5em;
+}
+
+.tooltip .tooltip--right,
+.tooltip--right .tooltiptext {
+    font-size: 1.2em;
+    width: 20em;
+    top: -4em;
+    left: 105%;
 }
 
 .schedule-line__school .tooltip,
