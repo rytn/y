@@ -82,3 +82,16 @@ table {
 .link:hover, .link:active {
     color: #e00;
 }
+
+.schedule-line__lecturer a, .schedule-line__lecturer a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.schedule-line__lecturer a:hover, .schedule-line__lecturer a:active {
+    color: #e00;
+    text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1px #e00 dotted;
+    cursor: help;
+}
