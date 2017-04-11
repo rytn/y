@@ -77,18 +77,20 @@ table {
     line-height: 1;
 }
 
-.schedule-line__lecturer {
-    font-size: 0.8em;
-    margin-top: 0.4em;
-}
-
-.link, .link:visited {
+.schedule-line__lecture--past a,
+.schedule-line__lecture--past a:visited {
     text-decoration: none;
     color: #44b;
 }
 
-.link:hover, .link:active {
+.schedule-line__lecture--past a:hover,
+.schedule-line__lecture--past a:active {
     color: #e00;
+}
+
+.schedule-line__lecturer {
+    font-size: 0.8em;
+    margin-top: 0.4em;
 }
 
 .schedule-line__lecturer a, .schedule-line__lecturer a:visited {
