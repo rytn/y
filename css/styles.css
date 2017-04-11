@@ -60,6 +60,7 @@ table {
 
 .schedule-line__date {
     font-size: 0.9em;
+    padding: 0 0.4em;
     width: 5%;
 }
 
@@ -78,6 +79,6 @@ table {
     color: #44b;
 }
 
-.link:hover {
+.link:hover, .link:active {
     color: #e00;
 }
