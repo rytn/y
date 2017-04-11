@@ -101,3 +101,40 @@ table {
     padding-right: 0.36em;
     width: 50px;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    text-align: center;
+    padding: 0.2em 0.2em;
+    border-radius: 0.2em;
+    margin-right: 0.3em;
+
+    top: -0.3em;
+    right: 105%;
+    margin-left: -5em;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:hover {
+    color: #e00;
+    border-bottom: 1px #e00 dotted;
+}
+
+.schedule-line__school .tooltip,
+.schedule-line__school .tooltiptext {
+    white-space: nowrap;
+}
