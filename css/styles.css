@@ -95,3 +95,9 @@ table {
     border-bottom: 1px #e00 dotted;
     cursor: help;
 }
+
+.schedule-line__school {
+    text-align: right;
+    padding-right: 0.36em;
+    width: 50px;
+}
