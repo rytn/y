@@ -168,3 +168,22 @@ table {
 .schedule-line__school .tooltiptext {
     white-space: nowrap;
 }
+
+@media (max-width:600px) {
+    .schedule-line__datetime {
+        width: 12%;
+    }
+
+    .schedule-line__lecture {
+        width: 50%;
+    }
+
+    .schedule-line__school {
+        width: 12%;
+        padding-left: 0.6em;
+    }
+
+    .schedule-line__auditorium {
+        width: 26%;
+    }
+}
