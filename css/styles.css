@@ -60,7 +60,7 @@ table {
 
 .schedule-line__datetime {
     padding: 0 0.5em 0 0.4em;
-    width: 5%;
+    width: 9%;
     text-align: center;
 }
 
@@ -74,6 +74,7 @@ table {
 
 .schedule-line__lecture {
     padding-left: 0.3em;
+    width: 64%;
 }
 
 .schedule-line__lecture__title {
@@ -113,7 +114,11 @@ table {
 .schedule-line__school {
     text-align: left;
     padding: 0 0.4em 0 0.3em;
-    width: 40px;
+    width: 9%;
+}
+
+.schedule-line__auditorium {
+    width: 18%;
 }
 
 .tooltip {
@@ -162,8 +167,4 @@ table {
 .schedule-line__school .tooltip,
 .schedule-line__school .tooltiptext {
     white-space: nowrap;
-}
-
-.schedule-line__auditorium {
-    width: 110px;
 }
