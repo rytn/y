@@ -66,6 +66,7 @@ table {
 
 .schedule-line__datetime__date {
     font-size: 1em;
+    display: block;
 }
 
 .schedule-line__datetime__time {
@@ -159,7 +160,7 @@ table {
 .tooltip .tooltip--right,
 .tooltip--right .tooltiptext {
     font-size: 1.2em;
-    width: 20em;
+    width: 19em;
     top: -4em;
     left: 105%;
 }
@@ -185,5 +186,49 @@ table {
 
     .schedule-line__auditorium {
         width: 26%;
+    }
+}
+
+@media (max-width:500px) {
+    td {
+        display: block;
+        text-align: center;
+    }
+    .schedule-line__datetime {
+        width: 3em;
+        margin: 0 auto 0.1em;
+        padding: 0;
+        font-weight: 700;
+    }
+
+    .schedule-line__lecture {
+        margin: 0 auto 0.3em;
+        width: 100%;
+        padding: 0;
+    }
+
+    .schedule-line__lecturer {
+        width: 100%;
+        margin: 0;
+    }
+
+    .schedule-line__school {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .schedule-line__auditorium {
+        margin: 0 auto 0.2em;
+        width: 100%;
+    }
+
+    .tooltip .tooltiptext{
+        width: 200px;
+        top: 100%;
+        left: 50%;
+        margin-left: -100px;
+        white-space: normal;
     }
 }
