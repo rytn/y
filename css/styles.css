@@ -237,3 +237,11 @@ table {
 .filter {
     float: left;
 }
+
+.hidden {
+    display: none;
+}
+
+.seen {
+    display: inline-block;
+}
