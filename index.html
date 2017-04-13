@@ -25,6 +25,8 @@
             <br>
             <input type="button" value="показать" onclick="filterLecturer('show')">
             <input type="button" value="спрятать" onclick="filterLecturer('hide')">
+            <br>
+            <input type="button" value="показать всех" onclick="displayAllLecturers()">
         </form>
         </div>
         <div class="schedule">
@@ -342,6 +344,15 @@
           } else {
             lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = displayIfFound;
           }
+        }
+      }
+
+      function displayAllLecturers() {
+        var name = document.getElementById('name').value;
+        var lecturers = document.querySelectorAll('*[id^="lecturer"]');
+
+        for (var i = 0; i < lecturers.length; i++) {
+          lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = 'table';
         }
       }
     </script>
