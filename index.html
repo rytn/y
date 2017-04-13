@@ -10,361 +10,455 @@
 
 <body>
     <div class="container">
-    <div class="filter">
-        <form>
-            по школам:<br>
-            <label><input id="checkSHRI" type="checkbox" value="ШРИ" onchange="filterSchool(this, 'ШРИ')" checked>ШРИ</label>
-            <br>
-            <label><input id="checkSHMR" type="checkbox" value="ШМР" onchange="filterSchool(this, 'ШМР')" checked>ШМР</label>
-            <br>
-            <label><input id="checkSHMD" type="checkbox" value="ШМД" onchange="filterSchool(this, 'ШМД')" checked>ШМД</label>
-        </form>
-        <form>
-            по лекторам:<br>
-            <input id="name" type="text">
-            <br>
-            <input type="button" value="показать" onclick="filterLecturer('show')">
-            <input type="button" value="спрятать" onclick="filterLecturer('hide')">
-        </form>
-        <form>
-            <input type="button" value="сбросить" onclick="resetFilter()">
-        </form>
-    </div>
+        <div class="filter">
+            <form>
+                по школам:
+                <br>
+                <label><input id="checkSHRI" type="checkbox" value="ШРИ" onchange="filterSchool(this, 'ШРИ')" checked>ШРИ</label>
+                <br>
+                <label><input id="checkSHMR" type="checkbox" value="ШМР" onchange="filterSchool(this, 'ШМР')" checked>ШМР</label>
+                <br>
+                <label><input id="checkSHMD" type="checkbox" value="ШМД" onchange="filterSchool(this, 'ШМД')" checked>ШМД</label>
+            </form>
+            <form>
+                по лекторам:
+                <br>
+                <input id="name" type="text">
+                <br>
+                <input type="button" value="показать" onclick="filterLecturer('show')">
+                <input type="button" value="спрятать" onclick="filterLecturer('hide')">
+            </form>
+            <form>
+                по датам:
+                <br>
+                <select id="filterDay">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select id="filterMonth">
+                    <option value="jan">январь</option>
+                    <option value="feb">февраль</option>
+                    <option value="mar">март</option>
+                    <option value="apr">апрель</option>
+                    <option value="may">май</option>
+                    <option value="jun">июнь</option>
+                    <option value="jul">июль</option>
+                    <option value="aug">август</option>
+                    <option value="sep">сентябрь</option>
+                    <option value="oct">октябрь</option>
+                    <option value="nov">ноябрь</option>
+                    <option value="dec">декабрь</option>
+                </select>
+                <select id="filterYear">
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                </select>
+                <input type="button" value="показать" onclick="filterDate()">
+            </form>
+            <form>
+                <input type="button" value="сбросить" onclick="resetFilter()">
+            </form>
+        </div>
         <div class="schedule">
             <h1>Доклады</h1>
-            <div class="schedule-month">
-                <span>октябрь 2016</span>
-            </div>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">20</span>
-                        <span class="schedule-line__datetime__time">19:00</span>
-                    </td>
-                    <td class="schedule-line__lecture schedule-line__lecture--past">
-                        <div class="schedule-line__lecture__title">
-                            <a href="#">Адаптивная вёрстка</a>
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer0" class="tooltip tooltip--right">
-                                Дмитрий Душкин
-                                <span class="tooltiptext">Кандидат технических наук, научный сотрудник ИПУ РАН с
+            <div id="oct2016" class="schedule-month">
+                <div class="schedule-month-heading">
+                    <span>октябрь 2016</span>
+                </div>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">20</span>
+                            <span class="schedule-line__datetime__time">19:00</span>
+                        </td>
+                        <td class="schedule-line__lecture schedule-line__lecture--past">
+                            <div class="schedule-line__lecture__title">
+                                <a href="#">Адаптивная вёрстка</a>
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer0" class="tooltip tooltip--right">
+                                    Дмитрий Душкин
+                                    <span class="tooltiptext">Кандидат технических наук, научный сотрудник ИПУ РАН с
                   2008 по 2013. Пришёл в Яндекс.Картинки в 2014 году, отвечал за мобильную версию
                   и рост производительности сервиса. В 2016 перешёл в Yandex Data Factory, где
                   разрабатывает интерфейсы и дизайн веб-приложений для B2B.</span>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            4.The Beatles
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school0" class="tooltip tooltip--left">
-                            ШРИ
-                            <span class="tooltiptext">Школа разработки интерфейсов</span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">27</span>
-                        <span class="schedule-line__datetime__time">18:00</span>
-                    </td>
-                    <td class="schedule-line__lecture schedule-line__lecture--past">
-                        <div class="schedule-line__lecture__title">
-                            <a href="#">Работа с сенсорным пользовательским вводом</a>
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer1" class="tooltip tooltip--right">
-                                Дмитрий Душкин
-                                <span class="tooltiptext">Кандидат технических наук, научный сотрудник ИПУ РАН с
-                    2008 по 2013. Пришёл в Яндекс.Картинки в 2014 году, отвечал за мобильную версию
-                    и рост производительности сервиса. В 2016 перешёл в Yandex Data Factory, где
-                    разрабатывает интерфейсы и дизайн веб-приложений для B2B.</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            4.Марс
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school1" class="tooltip tooltip--left">
-                            ШРИ
-                            <span class="tooltiptext">Школа разработки интерфейсов</span>
-                        </div>
-                        <div id="school2" class="tooltip tooltip--left">
-                            ШМД
-                            <span class="tooltiptext">Школа мобильного дизайна</span>
-                        </div>
-                        <div id="school3" class="tooltip tooltip--left">
-                            ШМР
-                            <span class="tooltiptext">Школа мобильной разработки</span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">30</span>
-                        <span class="schedule-line__datetime__time">13:00</span>
-                    </td>
-                    <td class="schedule-line__lecture schedule-line__lecture--past">
-                        <div class="schedule-line__lecture__title">
-                            <a href="#">Мультимедиа: возможности браузера</a>
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer2" class="tooltip tooltip--right">
-                                Максим Васильев
-                                <span class="tooltiptext">Во фронтенд-разработке с 2007 года. До 2013-го, 
-                      когда пришёл в Яндекс, работал технологом в студии Лебедева и других компаниях.</span>
-                            </div>
-                        </div>
+                        </td>
                         <td class="schedule-line__auditorium">
                             <div class="tooltip tooltip--left">
-                                5.Аргентина-Ямайка
+                                4.The Beatles
                                 <span class="tooltiptext">Аудитория</span>
                             </div>
                         </td>
                         <td class="schedule-line__school">
-                            <div id="school4" class="tooltip tooltip--left">
+                            <div id="school0" class="tooltip tooltip--left">
                                 ШРИ
                                 <span class="tooltiptext">Школа разработки интерфейсов</span>
                             </div>
                         </td>
-                    </td>
-                </tr>
-            </table>
-            <div class="schedule-month">
-                <span>ноябрь 2016</span>
-            </div>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">24</span>
-                        <span class="schedule-line__datetime__time">17:00</span>
-                    </td>
-                    <td class="schedule-line__lecture schedule-line__lecture--past">
-                        <div class="schedule-line__lecture__title">
-                            <a href="#">Клиентская оптимизация: мобильные устройства и инструменты</a>
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer3" class="tooltip tooltip--right">
-                                Иван Карев
-                                <span class="tooltiptext">Окончил факультет ВМК (вычислительной математики и кибернетики) МГУ им. М.В. Ломоносова, занимается веб-программированием с 2007 года. Сначала делал админки для системы фильтрации трафика, затем — интерфейсы онлайн-карт для проекта Космоснимки. В Яндексе начинал с Народа и Я.ру, последние два года занимался главной страницей. В настоящее время специализируется на вопросах производительности: от серверного JS до оптимизации загрузки страницы на клиенте.</span>
+                    </tr>
+                </table>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">27</span>
+                            <span class="schedule-line__datetime__time">18:00</span>
+                        </td>
+                        <td class="schedule-line__lecture schedule-line__lecture--past">
+                            <div class="schedule-line__lecture__title">
+                                <a href="#">Работа с сенсорным пользовательским вводом</a>
                             </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            7.Нянек
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school5" class="tooltip tooltip--left">
-                            ШРИ
-                            <span class="tooltiptext">Школа разработки интерфейсов</span>
-                        </div>
-                    </td>
-            </table>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">24</span>
-                        <span class="schedule-line__datetime__time">19:00</span>
-                    </td>
-                    <td class="schedule-line__lecture schedule-line__lecture--past">
-                        <div class="schedule-line__lecture__title">
-                            <a href="#">Развите продукта</a>
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer4" class="tooltip tooltip--right">
-                                Андрей Гевак
-                                <span class="tooltiptext">В конце 2013 года команда сервиса Яндекс.Музыка начала разработку новой версии. Новой получилась не только «шкурка», то есть дизайн, но и сами возможности. Мы переосмыслили поведение пользователей на сайте и в приложении и иначе оценили потребность людей в новой музыке. В результате этого получилась нынешняя версия music.yandex.ru и её мобильные клиенты. В докладе я расскажу о том, как шёл процесс переосмысления, почему мы сделали именно так, как сделали, и что из этого всего вышло.</span>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer1" class="tooltip tooltip--right">
+                                    Дмитрий Душкин
+                                    <span class="tooltiptext">Кандидат технических наук, научный сотрудник ИПУ РАН с
+                    2008 по 2013. Пришёл в Яндекс.Картинки в 2014 году, отвечал за мобильную версию
+                    и рост производительности сервиса. В 2016 перешёл в Yandex Data Factory, где
+                    разрабатывает интерфейсы и дизайн веб-приложений для B2B.</span>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            4.Апрель
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school6" class="tooltip tooltip--left">
-                            ШМД
-                            <span class="tooltiptext">Школа мобильного дизайна</span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <div class="schedule-month">
-                <span>август 2017</span>
+                        </td>
+                        <td class="schedule-line__auditorium">
+                            <div class="tooltip tooltip--left">
+                                4.Марс
+                                <span class="tooltiptext">Аудитория</span>
+                            </div>
+                        </td>
+                        <td class="schedule-line__school">
+                            <div id="school1" class="tooltip tooltip--left">
+                                ШРИ
+                                <span class="tooltiptext">Школа разработки интерфейсов</span>
+                            </div>
+                            <div id="school2" class="tooltip tooltip--left">
+                                ШМД
+                                <span class="tooltiptext">Школа мобильного дизайна</span>
+                            </div>
+                            <div id="school3" class="tooltip tooltip--left">
+                                ШМР
+                                <span class="tooltiptext">Школа мобильной разработки</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">30</span>
+                            <span class="schedule-line__datetime__time">13:00</span>
+                        </td>
+                        <td class="schedule-line__lecture schedule-line__lecture--past">
+                            <div class="schedule-line__lecture__title">
+                                <a href="#">Мультимедиа: возможности браузера</a>
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer2" class="tooltip tooltip--right">
+                                    Максим Васильев
+                                    <span class="tooltiptext">Во фронтенд-разработке с 2007 года. До 2013-го, 
+                      когда пришёл в Яндекс, работал технологом в студии Лебедева и других компаниях.</span>
+                                </div>
+                            </div>
+                            <td class="schedule-line__auditorium">
+                                <div class="tooltip tooltip--left">
+                                    5.Аргентина-Ямайка
+                                    <span class="tooltiptext">Аудитория</span>
+                                </div>
+                            </td>
+                            <td class="schedule-line__school">
+                                <div id="school4" class="tooltip tooltip--left">
+                                    ШРИ
+                                    <span class="tooltiptext">Школа разработки интерфейсов</span>
+                                </div>
+                            </td>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">3</span>
-                        <span class="schedule-line__datetime__time">16:00</span>
-                    </td>
-                    <td class="schedule-line__lecture">
-                        <div class="schedule-line__lecture__title">
-                            Природа операционных систем
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer5" class="tooltip tooltip--right">
-                                Николай Васюнин
-                                <span class="tooltiptext">Пришёл в Яндекс в 2014 году. Дизайнер продукта в музыкальных сервисах компании, 
+            <div id="nov2016" class="schedule-month">
+                <div class="schedule-month-heading">
+                    <span>ноябрь 2016</span>
+                </div>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">24</span>
+                            <span class="schedule-line__datetime__time">17:00</span>
+                        </td>
+                        <td class="schedule-line__lecture schedule-line__lecture--past">
+                            <div class="schedule-line__lecture__title">
+                                <a href="#">Клиентская оптимизация: мобильные устройства и инструменты</a>
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer3" class="tooltip tooltip--right">
+                                    Иван Карев
+                                    <span class="tooltiptext">Окончил факультет ВМК (вычислительной математики и кибернетики) МГУ им. М.В. Ломоносова, занимается веб-программированием с 2007 года. Сначала делал админки для системы фильтрации трафика, затем — интерфейсы онлайн-карт для проекта Космоснимки. В Яндексе начинал с Народа и Я.ру, последние два года занимался главной страницей. В настоящее время специализируется на вопросах производительности: от серверного JS до оптимизации загрузки страницы на клиенте.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="schedule-line__auditorium">
+                            <div class="tooltip tooltip--left">
+                                7.Нянек
+                                <span class="tooltiptext">Аудитория</span>
+                            </div>
+                        </td>
+                        <td class="schedule-line__school">
+                            <div id="school5" class="tooltip tooltip--left">
+                                ШРИ
+                                <span class="tooltiptext">Школа разработки интерфейсов</span>
+                            </div>
+                        </td>
+                </table>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">24</span>
+                            <span class="schedule-line__datetime__time">19:00</span>
+                        </td>
+                        <td class="schedule-line__lecture schedule-line__lecture--past">
+                            <div class="schedule-line__lecture__title">
+                                <a href="#">Развите продукта</a>
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer4" class="tooltip tooltip--right">
+                                    Андрей Гевак
+                                    <span class="tooltiptext">В конце 2013 года команда сервиса Яндекс.Музыка начала разработку новой версии. Новой получилась не только «шкурка», то есть дизайн, но и сами возможности. Мы переосмыслили поведение пользователей на сайте и в приложении и иначе оценили потребность людей в новой музыке. В результате этого получилась нынешняя версия music.yandex.ru и её мобильные клиенты. В докладе я расскажу о том, как шёл процесс переосмысления, почему мы сделали именно так, как сделали, и что из этого всего вышло.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="schedule-line__auditorium">
+                            <div class="tooltip tooltip--left">
+                                4.Апрель
+                                <span class="tooltiptext">Аудитория</span>
+                            </div>
+                        </td>
+                        <td class="schedule-line__school">
+                            <div id="school6" class="tooltip tooltip--left">
+                                ШМД
+                                <span class="tooltiptext">Школа мобильного дизайна</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="aug2017" class="schedule-month">
+                <div class="schedule-month-heading">
+                    <span>август 2017</span>
+                </div>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">3</span>
+                            <span class="schedule-line__datetime__time">16:00</span>
+                        </td>
+                        <td class="schedule-line__lecture">
+                            <div class="schedule-line__lecture__title">
+                                Природа операционных систем
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer5" class="tooltip tooltip--right">
+                                    Николай Васюнин
+                                    <span class="tooltiptext">Пришёл в Яндекс в 2014 году. Дизайнер продукта в музыкальных сервисах компании, 
                           участник команды разработки Яндекс.Радио.</span>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            6.Серафим
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school7" class="tooltip tooltip--left">
-                            ШРИ
-                            <span class="tooltiptext">Школа разработки интерфейсов</span>
-                        </div>
-                        <div id="school8" class="tooltip tooltip--left">
-                            ШМД
-                            <span class="tooltiptext">Школа мобильного дизайна</span>
-                        </div>
-                        <div id="school9" class="tooltip tooltip--left">
-                            ШМР
-                            <span class="tooltiptext">Школа мобильной разработки</span>
-                        </div>
-                    </td>
-                    </td>
-                </tr>
-            </table>
-            <table class="schedule-line">
-                <tr>
-                    <td class="schedule-line__datetime">
-                        <span class="schedule-line__datetime__date">23</span>
-                        <span class="schedule-line__datetime__time">18:00</span>
-                    </td>
-                    <td class="schedule-line__lecture">
-                        <div class="schedule-line__lecture__title">
-                            Debugging &amp; Polishing
-                        </div>
-                        <div class="schedule-line__lecturer">
-                            <div id="lecturer6" class="tooltip tooltip--right">
-                                Илья Сергеев
-                                <span class="tooltiptext">Разрабатывает приложения под мобильные платформы с 2009 года. За это время принял 
+                        </td>
+                        <td class="schedule-line__auditorium">
+                            <div class="tooltip tooltip--left">
+                                6.Серафим
+                                <span class="tooltiptext">Аудитория</span>
+                            </div>
+                        </td>
+                        <td class="schedule-line__school">
+                            <div id="school7" class="tooltip tooltip--left">
+                                ШРИ
+                                <span class="tooltiptext">Школа разработки интерфейсов</span>
+                            </div>
+                            <div id="school8" class="tooltip tooltip--left">
+                                ШМД
+                                <span class="tooltiptext">Школа мобильного дизайна</span>
+                            </div>
+                            <div id="school9" class="tooltip tooltip--left">
+                                ШМР
+                                <span class="tooltiptext">Школа мобильной разработки</span>
+                            </div>
+                        </td>
+                        </td>
+                    </tr>
+                </table>
+                <table class="schedule-line">
+                    <tr>
+                        <td class="schedule-line__datetime">
+                            <span class="schedule-line__datetime__date">23</span>
+                            <span class="schedule-line__datetime__time">18:00</span>
+                        </td>
+                        <td class="schedule-line__lecture">
+                            <div class="schedule-line__lecture__title">
+                                Debugging &amp; Polishing
+                            </div>
+                            <div class="schedule-line__lecturer">
+                                <div id="lecturer6" class="tooltip tooltip--right">
+                                    Илья Сергеев
+                                    <span class="tooltiptext">Разрабатывает приложения под мобильные платформы с 2009 года. За это время принял 
                                 участие более чем в 30 законченных проектах под Android, iOS, и Windows Phone. В Яндексе с 2015 года, занимается разработкой КиноПоиска под Android и iOS.</span>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="schedule-line__auditorium">
-                        <div class="tooltip tooltip--left">
-                            2.Ствола
-                            <span class="tooltiptext">Аудитория</span>
-                        </div>
-                    </td>
-                    <td class="schedule-line__school">
-                        <div id="school10" class="tooltip tooltip--left">
-                            ШМР
-                            <span class="tooltiptext">Школа мобильной разработки</span>
-                        </div>
-                    </td>
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                        <td class="schedule-line__auditorium">
+                            <div class="tooltip tooltip--left">
+                                2.Ствола
+                                <span class="tooltiptext">Аудитория</span>
+                            </div>
+                        </td>
+                        <td class="schedule-line__school">
+                            <div id="school10" class="tooltip tooltip--left">
+                                ШМР
+                                <span class="tooltiptext">Школа мобильной разработки</span>
+                            </div>
+                        </td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-
     <script>
-      function filterSchool(checkBox, schoolName) {
+    function filterSchool(checkBox, schoolName) {
         var filter;
 
         if (checkBox.checked) {
-          filter = 'seen';
+            filter = 'seen';
         } else {
-          filter = 'hidden';
+            filter = 'hidden';
         }
 
         var schools = document.querySelectorAll('*[id^="school"]');
 
         for (var i = 0; i < schools.length; i++) {
 
-          if (schools[i].textContent.indexOf(schoolName) !== -1) {
-            if (filter === 'hidden') {
-              schools[i].classList.remove('seen');
-            } else {
-              schools[i].classList.remove('hidden');
-            }
+            if (schools[i].textContent.indexOf(schoolName) !== -1) {
+                if (filter === 'hidden') {
+                    schools[i].classList.remove('seen');
+                } else {
+                    schools[i].classList.remove('hidden');
+                }
 
-            schools[i].className += ' ' + filter;
+                schools[i].className += ' ' + filter;
 
-            var hiddenSchools = 0;
-            for (var j = 0; j < schools[i].parentNode.children.length; j++) {
-              if (schools[i].parentNode.children[j].className.indexOf('hidden') !== -1) {
-                hiddenSchools++;
-              }
-            }
+                var hiddenSchools = 0;
+                for (var j = 0; j < schools[i].parentNode.children.length; j++) {
+                    if (schools[i].parentNode.children[j].className.indexOf('hidden') !== -1) {
+                        hiddenSchools++;
+                    }
+                }
 
-            if (hiddenSchools === schools[i].parentNode.children.length) {
-              schools[i].parentNode.parentNode.parentNode.parentNode.style.display = 'none';
-            } else if (filter === 'seen') {
-              schools[i].parentNode.parentNode.parentNode.parentNode.style.display = 'table';
+                if (hiddenSchools === schools[i].parentNode.children.length) {
+                    schools[i].parentNode.parentNode.parentNode.parentNode.style.display = 'none';
+                } else if (filter === 'seen') {
+                    schools[i].parentNode.parentNode.parentNode.parentNode.style.display = 'table';
+                }
             }
-          }
         }
-      }
+    }
 
-      function filterLecturer(filter) {
+    function filterLecturer(filter) {
         var name = document.getElementById('name').value;
         var lecturers = document.querySelectorAll('*[id^="lecturer"]');
         var displayIfFound, displayIfNotFound;
 
         if (filter === 'show') {
-          displayIfFound = 'table';
-          displayIfNotFound = 'none';
+            displayIfFound = 'table';
+            displayIfNotFound = 'none';
         } else if (filter === 'hide') {
-          displayIfFound = 'none';
-          displayIfNotFound = 'table';
+            displayIfFound = 'none';
+            displayIfNotFound = 'table';
         }
 
         for (var i = 0; i < lecturers.length; i++) {
-          if (lecturers[i].textContent.toLowerCase().indexOf(name) === -1) {
-            lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = displayIfNotFound;
-          } else {
-            lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = displayIfFound;
-          }
+            if (lecturers[i].textContent.toLowerCase().indexOf(name) === -1) {
+                lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = displayIfNotFound;
+            } else {
+                lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = displayIfFound;
+            }
         }
-      }
+    }
 
-      function resetFilter() {
+    function filterDate() {
+        var day = document.getElementById('filterDay')
+            .options[document.getElementById('filterDay').selectedIndex].value;
+        var month = document.getElementById('filterMonth')
+            .options[document.getElementById('filterMonth').selectedIndex].value;
+        var year = document.getElementById('filterYear')
+            .options[document.getElementById('filterYear').selectedIndex].value;
+
+        if (document.getElementById(month + year) === null) {
+            alert('Таких месяца и года нет в расписании.');
+            return;
+        }
+
+        var months = document.getElementsByClassName('schedule-month');
+
+        for (var i = 0; i < months.length; i++) {
+            var currentDay = months[i].getElementsByClassName('schedule-line__datetime__date');
+
+            for (var j = 0; j < currentDay.length; j++) {
+
+                if (!(months[i].id === month + year && currentDay[j].textContent === day)) {
+                    currentDay[j].parentNode.parentNode.parentNode.parentNode.style.display = 'none';
+                } else {
+                    currentDay[j].parentNode.parentNode.parentNode.parentNode.style.display = 'table';
+                }
+            }
+        }
+    }
+
+    function resetFilter() {
         var checkboxes = [document.getElementById('checkSHRI'), document.getElementById('checkSHMR'),
-        document.getElementById('checkSHMD')];
+            document.getElementById('checkSHMD')
+        ];
 
         for (var i = 0; i < checkboxes.length; i++) {
-          if (checkboxes[i].checked === false) {
-            checkboxes[i].checked = true;
-            filterSchool(checkboxes[i], checkboxes[i].value);
-          }
+            if (checkboxes[i].checked === false) {
+                checkboxes[i].checked = true;
+                filterSchool(checkboxes[i], checkboxes[i].value);
+            }
         }
 
         var lecturers = document.querySelectorAll('*[id^="lecturer"]');
 
         for (var i = 0; i < lecturers.length; i++) {
-          lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = 'table';
+            lecturers[i].parentNode.parentNode.parentNode.parentNode.parentNode.style.display = 'table';
         }
-      }
+    }
     </script>
 </body>
 
