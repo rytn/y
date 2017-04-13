@@ -12,12 +12,12 @@
     <div class="container">
     <div class="filter">
         <form>
-            Показывать:<br>
-            <label><input type="checkbox" onchange="filterSchool(this, 'ШРИ')" checked>ШРИ</label>
+            по школам:<br>
+            <label><input id="checkSHRI" type="checkbox" value="ШРИ" onchange="filterSchool(this, 'ШРИ')" checked>ШРИ</label>
             <br>
-            <label><input type="checkbox" onchange="filterSchool(this, 'ШМР')" checked>ШМР</label>
+            <label><input id="checkSHMR" type="checkbox" value="ШМР" onchange="filterSchool(this, 'ШМР')" checked>ШМР</label>
             <br>
-            <label><input type="checkbox" onchange="filterSchool(this, 'ШМД')" checked>ШМД</label>
+            <label><input id="checkSHMD" type="checkbox" value="ШМД" onchange="filterSchool(this, 'ШМД')" checked>ШМД</label>
         </form>
         <form>
             по лекторам:<br>
@@ -25,10 +25,11 @@
             <br>
             <input type="button" value="показать" onclick="filterLecturer('show')">
             <input type="button" value="спрятать" onclick="filterLecturer('hide')">
-            <br>
-            <input type="button" value="показать всех" onclick="displayAllLecturers()">
         </form>
-        </div>
+        <form>
+            <input type="button" value="сбросить" onclick="resetFilter()">
+        </form>
+    </div>
         <div class="schedule">
             <h1>Доклады</h1>
             <div class="schedule-month">
@@ -347,8 +348,17 @@
         }
       }
 
-      function displayAllLecturers() {
-        var name = document.getElementById('name').value;
+      function resetFilter() {
+        var checkboxes = [document.getElementById('checkSHRI'), document.getElementById('checkSHMR'),
+        document.getElementById('checkSHMD')];
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked === false) {
+            checkboxes[i].checked = true;
+            filterSchool(checkboxes[i], checkboxes[i].value);
+          }
+        }
+
         var lecturers = document.querySelectorAll('*[id^="lecturer"]');
 
         for (var i = 0; i < lecturers.length; i++) {
